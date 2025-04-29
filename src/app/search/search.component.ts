@@ -3,6 +3,7 @@ import { Employee } from '../../model/employee.model';
 import { EmployeeService } from '../../service/employee.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -29,5 +30,4 @@ export class SearchComponent {
       );
     }
   }
- 
 }

@@ -1,30 +1,67 @@
-<div class="container mt-5">
-    <h2 class="mb-4">Register Employee</h2>
-    <form (submit)="submitForm($event)">
-      <div class="mb-3">
-        <input id="name" type="text" class="form-control" placeholder="Name" autocomplete="off" />
-      </div>
-      <div class="mb-3">
-        <input id="email" type="text" class="form-control" placeholder="Email" autocomplete="off" />
-      </div>
+<form class="d-flex mb-3" role="search" (ngSubmit)="onSearchSubmit()">
+    <input
+      class="form-control me-2"
+      type="number"
+      [(ngModel)]="employeeId"
+      name="employeeId"
+      placeholder="Search by ID"
+      required />
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
   
-      <div class="dropdown mb-3">
-        <button
-          class="btn btn-secondary dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          {{ selectedDepartment || 'Select Department' }}
-        </button>
-        <ul class="dropdown-menu dropdown-menu-dark">
-          <li *ngFor="let dept of departments">
-            <a class="dropdown-item" (click)="selectDepartment(dept)">{{ dept }}</a>
-          </li>
-        </ul>
-      </div>
+  <button class="btn btn-primary">
+    Update Employee
+  </button>
   
-      <button type="submit" class="btn btn-primary">Add</button>
-    </form>
+  <div *ngIf="employee">
+    <h5>Employee Details</h5>
+  
+    <div class="mb-3">
+      <label for="id">ID</label>
+      <input
+        type="number"
+        id="id"
+        class="form-control"
+        [(ngModel)]="employee.id"
+        name="id"
+        readonly
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        [(ngModel)]="employee.name"
+        name="name"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        [(ngModel)]="employee.email"
+        name="email"
+        required
+      />
+    </div>
+  
+    <div class="mb-3">
+      <label for="department">Department</label>
+      <input
+        type="text"
+        id="department"
+        class="form-control"
+        [(ngModel)]="employee.department"
+        name="department"
+        required
+      />
+    </div>
   </div>
   

@@ -1,1 +1,5 @@
-<p>delete works!</p>
+<div class="mb-3">
+    <input type="number" [(ngModel)]="employeeId" class="form-control" placeholder="Enter Employee ID to delete" />
+    <button class="btn btn-danger mt-2" (click)="onDelete(employeeId!)" [disabled]="!employeeId">Delete Employee</button>
+  </div>
+  

@@ -5,10 +5,11 @@ import { EmployeeService } from '../../service/employee.service';
 import { CommonModule } from '@angular/common';
 import { department } from '../../util/departmenttype';
 import Swal from 'sweetalert2';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-add',
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,RouterLink],
   templateUrl: './add.component.html',
   styleUrl: './add.component.css'
 })

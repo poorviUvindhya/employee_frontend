@@ -27,7 +27,9 @@ export class EmployeeService{
       getEmployeeById(id: number): Observable<Employee> {
         return this.http.get<Employee>(`http://localhost:8080/employee/search-by-id/${id}`);
       }
-      
-      
 
+      deleteEmployee(id: number): Observable<void> {
+        return this.http.delete<void>(`http://localhost:8080/employee/delete/${id}`);
+      }
+      
 }
