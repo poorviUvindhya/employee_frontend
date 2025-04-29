@@ -12,26 +12,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>mdo</td>
-        <td>mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>fat</td>
-        <td>fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>John</td>
-        <td>Doe</td>
-        <td>social</td>
-        <td>social</td>
+      <tr *ngFor="let emp of employees">
+        <th scope="row">{{emp.id}}</th>
+        <td>{{emp.name}}</td>
+        <td>{{emp.email}}</td>
+        <td>{{emp.department}}</td>
+        <td>{{emp.createdAt}}</td>
+        <td>{{emp.updatedAt}}</td>
       </tr>
     </tbody>
   </table>
