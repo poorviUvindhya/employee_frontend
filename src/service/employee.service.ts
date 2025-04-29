@@ -8,12 +8,25 @@ import { Employee } from "../model/employee.model";
 })
 
 export class EmployeeService{
-    private apiurl='http://localhost:8080/employee/get-all';
+   
 
     constructor(private http:HttpClient){}
 
     getAllEmployee():Observable<Employee[]>{
-        return this.http.get<Employee[]>(this.apiurl)
+        return this.http.get<Employee[]>('http://localhost:8080/employee/get-all')
     }
+
+    addEmpoyee(employee:Employee):Observable<Employee>{
+        return this.http.post<Employee>('http://localhost:8080/employee/add',employee);
+    }
+
+    updateEmployee(employee: Employee): Observable<Employee> {
+        return this.http.put<Employee>('http://localhost:8080/employee/update-employee', employee);
+      }      
+
+      getEmployeeById(id: number): Observable<Employee> {
+        return this.http.get<Employee>(`http://localhost:8080/employee/search-by-id/{id}`);
+      }
+      
 
 }

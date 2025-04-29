@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Register Employee</h2>
+    <form (submit)="submitForm($event)">
+      <div class="mb-3">
+        <input id="name" type="text" class="form-control" placeholder="Name" autocomplete="off" />
+      </div>
+      <div class="mb-3">
+        <input id="email" type="text" class="form-control" placeholder="Email" autocomplete="off" />
+      </div>
+  
+      <div class="dropdown mb-3">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          {{ selectedDepartment || 'Select Department' }}
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li *ngFor="let dept of departments">
+            <a class="dropdown-item" (click)="selectDepartment(dept)">{{ dept }}</a>
+          </li>
+        </ul>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+  </div>
+  
