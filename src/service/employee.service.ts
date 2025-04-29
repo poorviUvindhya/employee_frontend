@@ -25,8 +25,9 @@ export class EmployeeService{
       }      
 
       getEmployeeById(id: number): Observable<Employee> {
-        return this.http.get<Employee>(`http://localhost:8080/employee/search-by-id/{id}`);
+        return this.http.get<Employee>(`http://localhost:8080/employee/search-by-id/${id}`);
       }
+      
       
 
 }

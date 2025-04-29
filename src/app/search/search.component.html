@@ -1,4 +1,16 @@
-<form class="d-flex" role="search">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+<form class="d-flex" role="search" (submit)="onSearchSubmit()">
+    <input class="form-control me-2" type="search" [(ngModel)]="employeeId" name="employeeId" placeholder="Search by ID" aria-label="Search">
     <button class="btn btn-outline-success" type="submit">Search</button>
   </form>
+  
+
+  <div *ngIf="employee">
+    <h3>Employee Details</h3>
+    <p><strong>ID:</strong> {{ employee.id }}</p>
+    <p><strong>Name:</strong> {{ employee.name }}</p>
+    <p><strong>Department:</strong> {{ employee.department }}</p>
+    <p><strong>Email:</strong> {{ employee.email }}</p>
+    <p><strong>Created At:</strong> {{ employee.createdAt }}</p>
+    <p><strong>Updated At:</strong> {{ employee.updatedAt }}</p>
+  </div>
+  
